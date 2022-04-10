@@ -179,7 +179,7 @@ canvas {
     
     }
     .Collapse_menu{
-        z-index:2;
+        z-index:5;
         order:1;
         margin-left: 30px;
         display: block;
@@ -200,6 +200,7 @@ canvas {
         border:5px rgb(235, 235, 235);
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
+        z-index: 10;
     }
     .hidemenu ul {
         margin-left:20px;
@@ -214,6 +215,7 @@ canvas {
     line-height: 2.4;
     border-top:2px rgb(148, 148, 148) solid;
     }
+
 }
 
 
@@ -233,15 +235,12 @@ section{
     border:2px rgb(236, 236, 236) solid;
     border-radius: 20px;
     padding:20px;
-    
 }
 /* 图片区域 */
 .swipe section{
     position: relative;
     z-index: 2;
     width: calc(70vw);
-    max-width: 1000px;
-
     /* 居中 */
     margin: 0 auto;
     
@@ -296,7 +295,7 @@ section{
     top: 50%;
     transform: translateY(-50%);
     font-size: 50px;
-	border: 5px rgba(0,0,0,0.15);
+    border: 5px rgba(0,0,0,0.15);
     border-radius: 7px;
     background-color: rgba(0,0,0,0.15);
     /* 弹性布局 居中 */
@@ -318,6 +317,22 @@ section{
 }
 .swipe .btn:hover{
     background-color: rgba(0,0,0,0.3);
+}
+
+
+@media screen and (max-width:800px){
+    .swipe .btn{
+        font-size: 16px;
+        width: 6px;
+        height: 40px;
+        border: 3px rgba(0,0,0,0.15);
+        border-radius: 5px;
+    }
+    section{
+        border:2px rgb(236, 236, 236) solid;
+        border-radius: 10px;
+        padding:20px;
+    }
 }
 
 /* 如果点击首部banner图片，则放大，再次点击后复原 */
