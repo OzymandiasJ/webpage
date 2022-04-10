@@ -1,0 +1,718 @@
+html{background:rgb(255, 255, 255);}
+*{
+    margin:0;
+    padding:0;
+    line-height: 1;
+    list-style-position:inside;
+    list-style-type: none;
+    text-decoration: none;
+
+}
+/* 粒子特效 */
+html,
+body {
+
+  top:0px;
+  left:0px;
+  width:100%;
+  /*Fallback if gradeints don't work */
+    height: auto;
+    background: #ffffff ;
+
+}
+canvas {
+	display: block;
+	vertical-align: bottom;
+}
+#particles-js {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 80px;
+	left: 0;
+    z-index: 1;
+}
+/* 粒子特效 */
+
+.whiteplate{
+    background-color: white;
+    width: calc(100vw);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+}
+.box{
+    background-color: white;
+    z-index: 2;
+
+    box-shadow: 0 1px 2px 0 rgba(101,129,156,.18);
+}
+
+
+.black_top{
+    display: flex;
+    width: 100%;
+    height:30px;
+    background-color: rgb(32, 32, 32);
+    justify-content: right;
+    align-items: center;
+}
+.sign_in{
+    cursor: pointer;
+    margin-right: 40px;
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+}
+.language_top
+{
+    cursor: pointer;
+    margin-right: 40px;
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+}
+.JTWZ_top{
+    cursor: pointer;
+    margin-right: 40px;
+    color: rgb(255, 255, 255);
+    font-size: 13px;
+}
+
+/* 响应式布局，当设备宽度小于800px时候该按钮显示，默认隐藏 */
+.hidemenu{
+    display: none;
+}
+@media screen and (min-width:800px)
+{
+    /* 如果设备宽度大于800，则如下效果：顶上两栏横排，正常效果 */
+   
+    .two_part{
+        width: 100%;
+        height:50px;
+        background-color: rgb(236, 236, 236);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+        
+    }
+    .two_text{
+        width: 510px;
+        color: rgb(0, 0, 0);
+        font-size: 12px;
+    }
+    .two_buy{
+        cursor: pointer;
+        margin-right: 20px;
+        width: 100px;
+        color: rgb(0, 0, 0);
+        font-size: 15px;
+    }
+    .logo{
+        margin-left: 20px;
+        cursor: pointer;
+        height: 40px;
+    
+    }
+}
+.Collapse_menu{
+    display: none;
+}
+@media screen and (max-width:800px)
+{
+    /* 如果设备宽度小于800，则如下效果：logo栏折叠起来 */
+    .black_top{
+        display: flex;
+        width: 100%;
+        height:30px;
+        background-color: rgb(32, 32, 32);
+        justify-content: space-around;
+        align-items: center;
+
+    }
+    .sign_in{
+        cursor: pointer;
+        margin-left: 50px;
+        color: rgb(255, 255, 255);
+        font-size: 13px;
+    }
+    .language_top
+    {
+        cursor: pointer;
+        color: rgb(255, 255, 255);
+        font-size: 13px;
+    }
+    .JTWZ_top{
+        cursor: pointer;
+        margin-right: 50px;
+        color: rgb(255, 255, 255);
+        font-size: 13px;
+    }
+    .two_part{
+        width: 100%;
+        height:50px;
+        background-color: rgb(236, 236, 236);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+    }
+    .two_text{
+        display: none;
+    }
+    .two_buy{
+        cursor: pointer;
+        width: 100px;
+        color: rgb(0, 0, 0);
+        font-size: 15px;
+        order:3;
+    }
+    .logo{
+        cursor: pointer;
+        order:2;
+        height: 40px;
+    
+    }
+    .Collapse_menu{
+        z-index:2;
+        order:1;
+        margin-left: 30px;
+        display: block;
+        position: relative;
+        
+    }
+
+    .hidemenu{
+        position: absolute; 
+        display: block;
+        height: 200px;
+        width: 210px;
+        /* background-color: #ff4400; */
+        top:33px;
+        left:-50px;
+        box-shadow: 0 3px 8px 0 rgba(0,0,0,.03);
+        background-color:rgb(236, 236, 236);
+        border:5px rgb(235, 235, 235);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .hidemenu ul {
+        margin-left:20px;
+        margin-right:20px;
+        display: block;
+        background-color:rgb(236, 236, 236);
+        border:5px rgb(235, 235, 235);
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .hidemenu ul li{
+    line-height: 2.4;
+    border-top:2px rgb(148, 148, 148) solid;
+    }
+}
+
+
+/* 轮播图主体 */
+.swipe{
+    /* 相对定位 */
+    position: relative;
+    margin-top:20px;
+    width: 100%;
+    /* 溢出隐藏 */
+
+    z-index:1;
+
+}
+section{
+
+    border:2px rgb(236, 236, 236) solid;
+    border-radius: 20px;
+    padding:20px;
+    
+}
+/* 图片区域 */
+.swipe section{
+    position: relative;
+    z-index: 2;
+    width: calc(70vw);
+    max-width: 1000px;
+
+    /* 居中 */
+    margin: 0 auto;
+    
+}
+/* 图片盒子 */
+.swipe .img-box{
+    width: calc(100%);
+    height: auto;
+    
+}
+/* 图片 */
+.swipe .img-box .img{
+    width: calc(100%);
+    height: auto;
+
+    object-fit: cover;
+}
+/* 指示器 */
+.swipe .select{
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    bottom: 20px;
+    text-align: center;
+}
+.swipe .select .item{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 0 10px;
+    /* 阴影 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+/* 鼠标移入指示器 */
+.swipe .select .item:hover{
+    background-color: #ff4400;
+}
+/* 指示器选中状态 */
+.swipe .select .item.checked{
+    background-color: #ff4400;
+}
+/* 两侧翻页按钮 */
+.swipe .btn{
+    width: 40px;
+    height: 100px;
+    color: #fff;
+    /* 绝对定位 垂直居中 */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    background-color: rgba(0,0,0,0.15);
+    /* 弹性布局 居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    /* 鼠标移入光标变小手 */
+    cursor: pointer;
+    /* 动画过渡 */
+    transition: 0.3s;
+}
+.swipe .btn.left{
+    left: -60px;
+}
+.swipe .btn.right{
+    right: -60px;
+
+}
+.swipe .btn:hover{
+    background-color: rgba(0,0,0,0.3);
+}
+
+/* 如果点击首部banner图片，则放大，再次点击后复原 */
+
+
+
+
+
+
+/* 响应式 屏幕尺寸小于1620px时以下代码生效(让两个按钮移动到图片主体内部) */
+@media screen and (max-width:1620px){
+    .swipe .btn.left{
+        left: 20px;
+    }
+    .swipe .btn.right{
+        right: 20px;
+    }
+}
+
+
+
+.choice{
+    margin:0 auto;
+    text-align: center;
+    margin:50px;
+    font-size: 36px;
+    font-family: arial, sans-serif;
+    word-spacing: 7.6pt;
+    line-height: 2.4;
+    
+}
+.subchoice{
+    margin:0 auto;
+    text-align: center;
+    font-size: 16px;
+    word-spacing: 7.6pt;
+    line-height: 2.4;
+    
+}
+@media screen and (min-width:900px){
+    /* 如果设备宽度大于900px的显示效果 */
+    .Multi_level_menu{
+        /* background-color: #ff4400; */
+        margin: 0 auto;
+        /* background-color:rgb(255, 239, 148); */
+        width: 800px;
+        height: auto;
+        margin-top: 30px;
+        
+    }
+    .Multi_level_menu span{
+        margin:0 30px 0 30px;
+        text-align: left;
+    }
+    .Multi_level_menu svg{
+        margin:0 30px 0 30px;
+    }    
+    .menu1,
+    .menu2,
+    .menu3{
+        width: 800px;
+        height: 60px;
+        margin:0 auto;
+        margin-top: 20px;
+        overflow: hidden;
+        background-color: rgb(229,208,235);
+        border: 5px rgb(229,208,235) solid;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+    .hidebox1,
+    .hidebox2,
+    .hidebox3{
+        margin:0 auto;
+        height: 240px;
+        background-color: rgb(248,243,250);
+        width: 740px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+    .hidebox1 .hideimg,
+    .hidebox2 .hideimg,
+    .hidebox3 .hideimg{
+    
+        width: 260px;
+        border: 5px rgb(143,132,204) solid;
+        border-radius: 10px;
+        margin-left: 20px;
+        overflow: hidden;
+    }
+    .hidebox1 .hidetext,
+    .hidebox2 .hidetext,
+    .hidebox3 .hidetext{
+        width: 400px;
+        margin-right: 20px;
+        line-height: 1.5;
+    }
+    
+    .blank{
+        margin:0 auto;
+        height: 300px;
+    }
+}
+@media screen and (max-width:900px){
+        /* 如果设备宽度小于900px的显示效果 */
+    .Multi_level_menu{
+        /* background-color: #ff4400; */
+        margin: 0 auto;
+        /* background-color:rgb(255, 239, 148); */
+        width: calc(80vw);
+        /* 菜单宽度动态变化 */
+        height: auto;
+        margin-top: 30px;
+        
+    }
+    .Multi_level_menu span{
+        margin:0 30px 0 30px;
+        text-align: center;
+        font-size: 12px;
+        line-height: 1.5;
+    }
+    .Multi_level_menu svg{
+        margin:0 30px 0 30px;
+    }    
+    .menu1,
+    .menu2,
+    .menu3{
+        width: 100%;
+        height: 60px;
+        margin:0 auto;
+        margin-top: 20px;
+        overflow: hidden;
+        background-color: rgb(229,208,235);
+        border: 5px rgb(229,208,235) solid;
+        border-radius: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+    .hidebox1,
+    .hidebox2,
+    .hidebox3{
+        /* 让隐藏盒子的图片和文字纵向排列 */
+        margin:0 auto;
+        overflow: hidden;
+        height: 450px;
+        background-color: rgb(248,243,250);
+        width: calc(80vw);
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        
+    }
+    .hidebox1 .hideimg,
+    .hidebox2 .hideimg,
+    .hidebox3 .hideimg{
+        margin:0 auto;
+        margin-top:20px;
+        width: 260px;
+        border: 5px rgb(143,132,204) solid;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .hidebox1 .hidetext,
+    .hidebox2 .hidetext,
+    .hidebox3 .hidetext{
+        text-align: center;
+        width: 350px;
+        margin: 0 auto;
+        margin-top:20px;
+ 
+        line-height: 1.5;
+    }
+    
+    .blank{
+        margin:0 auto;
+        height: 300px;
+        display: flex;
+    }
+}
+
+
+
+
+
+.part7-2rectange{
+    margin :0 auto;
+    height: 50px;
+    width: 300px;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:50px;
+
+}
+.part7-rectange1{
+    cursor: pointer;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    border:1px solid rgb(0, 0, 0);
+    font-size: 13px;
+    padding: 5px 20px 5px 20px;
+    width: 100px;
+    line-height: 40px;
+}
+.part7-rectange2{
+    cursor: pointer;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    border:1px solid rgb(0, 0, 0);
+    font-size: 13px;
+    padding: 5px 20px 5px 20px;
+    width: 100px;
+        line-height: 40px;
+}
+/* 结尾 */
+.part8{
+    width: 70%;
+    /* height: 25px; */
+    background-color: rgba(37, 37, 82, 0);
+    margin: 0 auto;
+    overflow: hidden;
+}
+.part8-text{
+    margin: 20px 0 ;
+    float: left;
+    font-size: 14px;
+    color:rgba(0, 0, 0, 0.8);
+}
+.part8-pic{
+    margin: 20px 0 ;
+    height: 21px;
+    float: right;
+}
+.line1{
+    width: 70%;
+    margin: 5px auto;
+    border: 1px solid rgb(160, 160, 160);
+}
+
+/* 响应式布局 */
+@media screen and (min-width:600px)
+{
+    /* 当设备宽度大于600px时，底下的四个栏目横向排列 */
+
+    .part9{
+
+        background-color: rgba(37, 37, 82, 0);
+        margin: 0 auto;
+        margin-top: 20px;
+        width: 70%;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+    }
+    .list1{
+        width: 200px;
+        list-style-type: none;
+        margin-left: 50px;
+    }
+    .list2{
+        width: 200px;
+        list-style-type: none;
+    
+    }
+    .list3{
+        width: 200px;
+        list-style-type: none;
+    
+    }
+    .list4{
+        width: 200px;
+        list-style-type: none;
+    
+    }
+    .part10{
+        height: 80px;
+        margin:0 auto;
+        width:70% ;
+        display: flex;
+        justify-content: space-between;
+    }
+    .part10-text{
+        text-align: center;
+        margin-top:20px;    
+        float: left;
+        font-size: 13px;
+        color:rgba(0, 0, 0, 0.8);
+    }
+    .part10-pic{
+        margin-top:20px;    
+        float: right;
+        display: flex;
+        justify-content: space-around;
+    }
+    .part10-pic1{
+        float: right;
+        margin-left:20px
+    }
+    .four-part{
+        background-color: #F2F2F2;
+    }
+    .end-part{
+        margin:0 auto;
+        font-size: 13px;
+        margin-top: 5px;
+        color:rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: space-around;
+    }
+    .end-part span{
+        display: block;
+        text-align: center;
+    }
+}
+@media screen and (max-width:600px)
+{
+    /* 当设备宽度小于600px时，底下的四个栏目纵向排列 */
+
+    .part9{
+
+        background-color: rgba(37, 37, 82, 0);
+        margin: 0 auto;
+        margin-top: 20px;
+        width: 70%;
+        overflow: hidden;
+
+    }
+    .list1{
+        width: 200px;
+        list-style-type: none;
+        text-align: center;
+        margin :0 auto;
+    }
+    .list2{
+        width: 200px;
+        list-style-type: none;
+        text-align: center;
+        margin :0 auto;
+    }
+    .list3{
+        width: 200px;
+        list-style-type: none;
+        text-align: center;
+        margin :0 auto;
+    }
+    .list4{
+        width: 200px;
+        list-style-type: none;
+        text-align: center;
+        margin :0 auto;
+    }
+    .part10{
+        height: 80px;
+        margin:0 auto;
+        width:70% ;
+
+    }
+    .part10-text{
+        text-align: center;
+        margin-top:20px;    
+        font-size: 13px;
+        color:rgba(0, 0, 0, 0.8);
+    }
+    .part10-pic{
+        margin-top:20px;    
+        display: flex;
+        justify-content: space-between;
+    }
+    .part10-pic1{
+        margin-left:20px
+    }
+    .four-part{
+        background-color: #F2F2F2;
+        height: auto;
+    }
+    .end-part{
+        margin: 0 auto;
+    }
+    .end-part span{
+        text-align: center;
+        line-height: 1.6;
+        display: block;
+        margin:0 auto;
+        font-size: 13px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        color:rgba(0, 0, 0, 0.8);
+    }
+
+}
+
+
